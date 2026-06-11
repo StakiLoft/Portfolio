@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Djawad Hamoum - Portfolio</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0f1117;
+      color: #e0e0e0;
+    }
+
+    /* navbar */
+    .navbar {
+      background-color: #161822 !important;
+      border-bottom: 1px solid #2a2d3e;
+    }
+    .navbar-brand {
+      color: #4ade80 !important;
+      font-weight: 700;
+    }
+    .nav-link {
+      color: #a0a0b0 !important;
+    }
+    .nav-link:hover {
+      color: #4ade80 !important;
+    }
+
+    /* hero */
+    #hero {
+      padding: 100px 0 80px 0;
+      background: linear-gradient(135deg, #0f1117 60%, #1a1f2e 100%);
+    }
+    #hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+    #hero h1 span {
+      color: #4ade80;
+    }
+    #hero p.lead {
+      color: #8888a0;
+    }
+    .badge-custom {
+      background-color: #1e2133;
+      color: #4ade80;
+      border: 1px solid #2e3550;
+      font-size: 0.8rem;
+      padding: 6px 12px;
+      border-radius: 20px;
+    }
+
+    /* sections */
+    section {
+      padding: 70px 0;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .section-title span {
+      color: #4ade80;
+    }
+    .divider {
+      width: 50px;
+      height: 3px;
+      background-color: #4ade80;
+      margin-bottom: 40px;
+    }
+
+    /* cards */
+    .card {
+      background-color: #161822;
+      border: 1px solid #2a2d3e;
+      border-radius: 10px;
+    }
+    .card:hover {
+      border-color: #4ade80;
+      transition: border-color 0.3s;
+    }
+
+    /* compétences - progress bars */
+    .skill-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      font-size: 0.88rem;
+    }
+    .progress {
+      height: 8px;
+      background-color: #1e2133;
+      border-radius: 10px;
+      margin-bottom: 18px;
+    }
+    .progress-bar {
+      background-color: #4ade80;
+      border-radius: 10px;
+    }
+
+    /* timeline expérience */
+    .timeline-item {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 35px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 10px;
+      height: 10px;
+      background-color: #4ade80;
+      border-radius: 50%;
+    }
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 20px;
+      width: 2px;
+      height: calc(100% + 10px);
+      background-color: #2a2d3e;
+    }
+    .timeline-item:last-child::after {
+      display: none;
+    }
+    .timeline-date {
+      font-size: 0.8rem;
+      color: #4ade80;
+      font-weight: 600;
+    }
+    .timeline-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+    .timeline-sub {
+      font-size: 0.85rem;
+      color: #7878a0;
+      margin-bottom: 6px;
+    }
+    .timeline-desc {
+      font-size: 0.88rem;
+      color: #a0a0b0;
+    }
+
+    /* projets */
+    .project-card .card-body {
+      padding: 20px;
+    }
+    .project-card .card-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #e0e0e0;
+    }
+    .project-card .card-text {
+      font-size: 0.85rem;
+      color: #8888a0;
+    }
+    .tag {
+      display: inline-block;
+      background-color: #1e2133;
+      color: #4ade80;
+      font-size: 0.75rem;
+      padding: 3px 10px;
+      border-radius: 5px;
+      margin-right: 5px;
+      margin-top: 5px;
+      border: 1px solid #2e3550;
+    }
+    .btn-green {
+      background-color: #4ade80;
+      color: #0f1117;
+      border: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    .btn-green:hover {
+      background-color: #22c55e;
+      color: #0f1117;
+    }
+    .btn-outline-green {
+      border: 1px solid #4ade80;
+      color: #4ade80;
+      background: transparent;
+      font-size: 0.85rem;
+    }
+    .btn-outline-green:hover {
+      background-color: #4ade80;
+      color: #0f1117;
+    }
+
+    /* contact */
+    #contact {
+      background-color: #161822;
+      border-top: 1px solid #2a2d3e;
+      border-bottom: 1px solid #2a2d3e;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .contact-item i {
+      font-size: 1.3rem;
+      color: #4ade80;
+      width: 24px;
+    }
+    .contact-item a {
+      color: #a0a0b0;
+      text-decoration: none;
+    }
+    .contact-item a:hover {
+      color: #4ade80;
+    }
+
+    footer {
+      background-color: #0f1117;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 0.82rem;
+      color: #4a4a6a;
+      border-top: 1px solid #1e2133;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Djawad.dev</a>
+    <button class="navbar-toggler border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-2">
+        <li class="nav-item"><a class="nav-link" href="#apropos">À propos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#competences">Compétences</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projets">Projets</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Expérience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <p class="mb-2">
+          <span class="badge-custom me-2">BTS SIO – SLAM</span>
+        </p>
+        <h1 class="mt-3 mb-3">Salut, moi c'est <span>Djawad Hamoum</span></h1>
+        <p class="lead mb-4">
+          Étudiant en BTS SIO spécialité SLAM, passionné par le développement web et les nouvelles technos.
+          Je cherche à progresser sur des projets concrets.
+        </p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="#projets" class="btn btn-green px-4 py-2 rounded">Voir mes projets</a>
+          <a href="#contact" class="btn btn-outline-green px-4 py-2 rounded">Me contacter</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- A PROPOS -->
+<section id="apropos">
+  <div class="container">
+    <h2 class="section-title">À <span>propos</span></h2>
+    <div class="divider"></div>
+    <div class="row">
+      <div class="col-lg-8">
+        <p>
+          Je suis actuellement en BTS SIO (Services Informatiques aux Organisations), option SLAM, 
+          après avoir obtenu mon bac STI2D option SIN. Ça fait un moment que l'informatique me passionne, 
+          que ce soit pour le développement ou le côté technique.
+        </p>
+        <p>
+          J'ai eu l'occasion de faire un stage chez <strong style="color:#4ade80">l'URSSAF</strong> en tant que technicien informatique, 
+          où j'ai pu travailler sur des migrations, des masters et de la résolution de pannes. 
+          En parallèle, je bosse sur des projets web pour monter en compétences côté dev.
+        </p>
+        <p style="color:#8888a0; font-size:0.9rem;">
+          <i class="bi bi-geo-alt-fill me-1" style="color:#4ade80"></i> Clamart (92140) &nbsp;|&nbsp;
+          <i class="bi bi-car-front-fill me-1" style="color:#4ade80"></i> Permis B
+        </p>
+      </div>
+      <div class="col-lg-4 mt-4 mt-lg-0">
+        <div class="card p-3">
+          <p class="mb-2" style="font-size:0.85rem; color:#7878a0; text-transform:uppercase; letter-spacing:1px;">Formation</p>
+          <div class="mb-3">
+            <p class="mb-0 fw-600" style="font-size:0.92rem;">BTS SIO – SLAM</p>
+            <p class="mb-0" style="font-size:0.82rem; color:#7878a0;">En cours</p>
+          </div>
+          <div>
+            <p class="mb-0 fw-600" style="font-size:0.92rem;">Bac STI2D – SIN</p>
+            <p class="mb-0" style="font-size:0.82rem; color:#7878a0;">Lycée Manouchian – 2023</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETENCES -->
+<section id="competences" style="background-color:#0d0f15;">
+  <div class="container">
+    <h2 class="section-title">Mes <span>compétences</span></h2>
+    <div class="divider"></div>
+    <div class="row">
+
+      <div class="col-md-6">
+        <h6 class="mb-3" style="color:#7878a0; text-transform:uppercase; font-size:0.78rem; letter-spacing:1px;">Développement web</h6>
+
+        <div class="skill-label">
+          <span>HTML / CSS</span>
+          <span style="color:#4ade80">70%</span>
+        </div>
+        <div class="progress"><div class="progress-bar" style="width:70%"></div></div>
+
+        <div class="skill-label">
+          <span>Bootstrap</span>
+          <span style="color:#4ade80">60%</span>
+        </div>
+        <div class="progress"><div class="progress-bar" style="width:60%"></div></div>
+
+        <div class="skill-label">
+          <span>PHP / SQL</span>
+          <span style="color:#4ade80">45%</span>
+        </div>
+        <div class="progress"><div class="progress-bar" style="width:45%"></div></div>
+
+        <div class="skill-label">
+          <span>Python</span>
+          <span style="color:#4ade80">40%</span>
+        </div>
+        <div class="progress"><div class="progress-bar" style="width:40%"></div></div>
+      </div>
+
+      <div class="col-md-6 mt-4 mt-md-0">
+        <h6 class="mb-3" style="color:#7878a0; text-transform:uppercase; font-size:0.78rem; letter-spacing:1px;">Outils & autres</h6>
+
+        <div class="skill-label">
+          <span>PostgreSQL / pgAdmin</span>
+          <span style="color:#4ade80">50%</span>
+        </div>
+        <div class="progress"><div class="progress-bar" style="width:50%"></div></div>
+
+        <div class="skill-label">
+          <span>WordPress / PrestaShop</span>
+          <span style="color:#4ade80">55%</span>
+        </div>
+        <div class="progress"><div class="progress-bar" style="width:55%"></div></div>
+
+        <div class="skill-label">
+          <span>C / C++</span>
+          <span style="color:#4ade80">30%</span>
+        </div>
+        <div class="progress"><div class="progress-bar" style="width:30%"></div></div>
+
+        <div class="skill-label">
+          <span>Suite Microsoft Office</span>
+          <span style="color:#4ade80">75%</span>
+        </div>
+        <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJETS -->
+<section id="projets">
+  <div class="container">
+    <h2 class="section-title">Mes <span>projets</span></h2>
+    <div class="divider"></div>
+    <div class="row g-4">
+
+      <!-- Pixel Pulse -->
+      <div class="col-md-6 col-lg-5">
+        <div class="card project-card h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h5 class="card-title">Pixel Pulse</h5>
+              <i class="bi bi-joystick" style="font-size:1.4rem; color:#4ade80"></i>
+            </div>
+            <p class="card-text">
+              Site vitrine dédié au gaming. J'ai travaillé sur la mise en page, le design et l'intégration 
+              des contenus. Projet réalisé dans le cadre de ma formation.
+            </p>
+            <div class="mt-3">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Bootstrap</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="d-flex gap-2 mt-4">
+              <a href="https://github.com/StakiLoft/Pixel-Pulse" target="_blank" class="btn btn-outline-green btn-sm px-3">
+                <i class="bi bi-github me-1"></i> GitHub
+              </a>
+              <a href="https://stakiloft.github.io/Pixel-Pulse" target="_blank" class="btn btn-green btn-sm px-3">
+                <i class="bi bi-box-arrow-up-right me-1"></i> Voir le site
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte "en cours" -->
+      <div class="col-md-6 col-lg-5">
+        <div class="card project-card h-100" style="border-style: dashed;">
+          <div class="card-body d-flex flex-column justify-content-center align-items-center text-center" style="min-height:220px;">
+            <i class="bi bi-plus-circle" style="font-size:2rem; color:#2a2d3e; margin-bottom:12px;"></i>
+            <p style="color:#4a4a6a; font-size:0.88rem;">Nouveau projet en cours...</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="background-color:#0d0f15;">
+  <div class="container">
+    <h2 class="section-title"><span>Expériences</span> & formation</h2>
+    <div class="divider"></div>
+    <div class="row">
+      <div class="col-lg-6">
+        <h6 class="mb-4" style="color:#7878a0; text-transform:uppercase; font-size:0.78rem; letter-spacing:1px;">Expériences</h6>
+
+        <div class="timeline-item">
+          <p class="timeline-date">Mars 2025 – Mai 2025</p>
+          <p class="timeline-title">Technicien Informatique – Stage</p>
+          <p class="timeline-sub"><i class="bi bi-building me-1"></i> URSSAF</p>
+          <p class="timeline-desc">
+            Résolution de pannes, déploiement de masters, migrations de postes, assistance utilisateur.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-date">2020</p>
+          <p class="timeline-title">Stagiaire support technique</p>
+          <p class="timeline-sub"><i class="bi bi-building me-1"></i> Global Knowledge – Rueil-Malmaison</p>
+          <p class="timeline-desc">
+            Installation de postes de travail, gestion du parc informatique, classement de documents numériques.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-date">Jan 2024 – Sep 2024</p>
+          <p class="timeline-title">Préparateur de commandes Drive</p>
+          <p class="timeline-sub"><i class="bi bi-shop me-1"></i> Super U – Clamart</p>
+          <p class="timeline-desc">
+            Utilisation de scanners et outils de gestion de stocks, organisation logistique.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="col-lg-6 mt-5 mt-lg-0">
+        <h6 class="mb-4" style="color:#7878a0; text-transform:uppercase; font-size:0.78rem; letter-spacing:1px;">Formation</h6>
+
+        <div class="timeline-item">
+          <p class="timeline-date">2025 – Aujourd'hui</p>
+          <p class="timeline-title">BTS SIO – Option SLAM</p>
+          <p class="timeline-sub"><i class="bi bi-mortarboard me-1"></i> En cours</p>
+          <p class="timeline-desc">
+            Services informatiques aux organisations, développement d'applications, bases de données, réseaux.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-date">2021 – 2023</p>
+          <p class="timeline-title">Baccalauréat STI2D – Option SIN</p>
+          <p class="timeline-sub"><i class="bi bi-mortarboard me-1"></i> Lycée Missak et Mélinée Manouchian – Châtenay-Malabry</p>
+          <p class="timeline-desc">
+            Python, Arduino, HTML/CSS, électronique, réseaux, systèmes embarqués (C/C++).
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Me <span>contacter</span></h2>
+    <div class="divider"></div>
+    <div class="row">
+      <div class="col-lg-6">
+        <p style="color:#8888a0;">
+          N'hésitez pas à me contacter pour une opportunité, un projet ou juste pour échanger !
+        </p>
+        <div class="mt-4">
+
+          <div class="contact-item">
+            <i class="bi bi-envelope-fill"></i>
+            <a href="mailto:djawadhamoum@gmail.com">djawadhamoum@gmail.com</a>
+          </div>
+
+          <div class="contact-item">
+            <i class="bi bi-telephone-fill"></i>
+            <a href="tel:0781405433">07.81.40.54.33</a>
+          </div>
+
+          <div class="contact-item">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span style="color:#a0a0b0;">Clamart (92140)</span>
+          </div>
+
+          <div class="contact-item">
+            <i class="bi bi-linkedin"></i>
+            <a href="https://www.linkedin.com/in/djawad-hamoum-14972b221/" target="_blank">
+              linkedin.com/in/djawad-hamoum
+            </a>
+          </div>
+
+          <div class="contact-item">
+            <i class="bi bi-github"></i>
+            <a href="https://github.com/StakiLoft" target="_blank">
+              github.com/StakiLoft
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="mb-0">© 2025 Djawad Hamoum</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
