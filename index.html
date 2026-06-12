@@ -8,230 +8,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #0f1117;
-      color: #e0e0e0;
-    }
 
-    /* navbar */
-    .navbar {
-      background-color: #161822 !important;
-      border-bottom: 1px solid #2a2d3e;
-    }
-    .navbar-brand {
-      color: #4ade80 !important;
-      font-weight: 700;
-    }
-    .nav-link {
-      color: #a0a0b0 !important;
-    }
-    .nav-link:hover {
-      color: #4ade80 !important;
-    }
-
-    /* hero */
-    #hero {
-      padding: 100px 0 80px 0;
-      background: linear-gradient(135deg, #0f1117 60%, #1a1f2e 100%);
-    }
-    #hero h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-    }
-    #hero h1 span {
-      color: #4ade80;
-    }
-    #hero p.lead {
-      color: #8888a0;
-    }
-    .badge-custom {
-      background-color: #1e2133;
-      color: #4ade80;
-      border: 1px solid #2e3550;
-      font-size: 0.8rem;
-      padding: 6px 12px;
-      border-radius: 20px;
-    }
-
-    /* sections */
-    section {
-      padding: 70px 0;
-    }
-    .section-title {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    .section-title span {
-      color: #4ade80;
-    }
-    .divider {
-      width: 50px;
-      height: 3px;
-      background-color: #4ade80;
-      margin-bottom: 40px;
-    }
-
-    /* cards */
-    .card {
-      background-color: #161822;
-      border: 1px solid #2a2d3e;
-      border-radius: 10px;
-    }
-    .card:hover {
-      border-color: #4ade80;
-      transition: border-color 0.3s;
-    }
-
-    /* compétences - progress bars */
-    .skill-label {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 5px;
-      font-size: 0.88rem;
-    }
-    .progress {
-      height: 8px;
-      background-color: #1e2133;
-      border-radius: 10px;
-      margin-bottom: 18px;
-    }
-    .progress-bar {
-      background-color: #4ade80;
-      border-radius: 10px;
-    }
-
-    /* timeline expérience */
-    .timeline-item {
-      position: relative;
-      padding-left: 25px;
-      margin-bottom: 35px;
-    }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 8px;
-      width: 10px;
-      height: 10px;
-      background-color: #4ade80;
-      border-radius: 50%;
-    }
-    .timeline-item::after {
-      content: '';
-      position: absolute;
-      left: 4px;
-      top: 20px;
-      width: 2px;
-      height: calc(100% + 10px);
-      background-color: #2a2d3e;
-    }
-    .timeline-item:last-child::after {
-      display: none;
-    }
-    .timeline-date {
-      font-size: 0.8rem;
-      color: #4ade80;
-      font-weight: 600;
-    }
-    .timeline-title {
-      font-weight: 600;
-      font-size: 1rem;
-      margin-bottom: 4px;
-    }
-    .timeline-sub {
-      font-size: 0.85rem;
-      color: #7878a0;
-      margin-bottom: 6px;
-    }
-    .timeline-desc {
-      font-size: 0.88rem;
-      color: #a0a0b0;
-    }
-
-    /* projets */
-    .project-card .card-body {
-      padding: 20px;
-    }
-    .project-card .card-title {
-      font-weight: 600;
-      font-size: 1rem;
-      color: #e0e0e0;
-    }
-    .project-card .card-text {
-      font-size: 0.85rem;
-      color: #8888a0;
-    }
-    .tag {
-      display: inline-block;
-      background-color: #1e2133;
-      color: #4ade80;
-      font-size: 0.75rem;
-      padding: 3px 10px;
-      border-radius: 5px;
-      margin-right: 5px;
-      margin-top: 5px;
-      border: 1px solid #2e3550;
-    }
-    .btn-green {
-      background-color: #4ade80;
-      color: #0f1117;
-      border: none;
-      font-weight: 600;
-      font-size: 0.85rem;
-    }
-    .btn-green:hover {
-      background-color: #22c55e;
-      color: #0f1117;
-    }
-    .btn-outline-green {
-      border: 1px solid #4ade80;
-      color: #4ade80;
-      background: transparent;
-      font-size: 0.85rem;
-    }
-    .btn-outline-green:hover {
-      background-color: #4ade80;
-      color: #0f1117;
-    }
-
-    /* contact */
-    #contact {
-      background-color: #161822;
-      border-top: 1px solid #2a2d3e;
-      border-bottom: 1px solid #2a2d3e;
-    }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-    .contact-item i {
-      font-size: 1.3rem;
-      color: #4ade80;
-      width: 24px;
-    }
-    .contact-item a {
-      color: #a0a0b0;
-      text-decoration: none;
-    }
-    .contact-item a:hover {
-      color: #4ade80;
-    }
-
-    footer {
-      background-color: #0f1117;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 0.82rem;
-      color: #4a4a6a;
-      border-top: 1px solid #1e2133;
-    }
-  </style>
 </head>
 <body>
 
@@ -245,8 +24,10 @@
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto gap-2">
         <li class="nav-item"><a class="nav-link" href="#apropos">À propos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#btssio">BTS SIO</a></li>
         <li class="nav-item"><a class="nav-link" href="#competences">Compétences</a></li>
         <li class="nav-item"><a class="nav-link" href="#projets">Projets</a></li>
+        <li class="nav-item"><a class="nav-link" href="#veille">Veille techno</a></li>
         <li class="nav-item"><a class="nav-link" href="#experience">Expérience</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
@@ -302,13 +83,75 @@
         <div class="card p-3">
           <p class="mb-2" style="font-size:0.85rem; color:#7878a0; text-transform:uppercase; letter-spacing:1px;">Formation</p>
           <div class="mb-3">
-            <p class="mb-0 fw-600" style="font-size:0.92rem;">BTS SIO – SLAM</p>
+            <p class="mb-0" style="font-size:0.92rem; font-weight:600; color:#4ade80;">BTS SIO – SLAM</p>
             <p class="mb-0" style="font-size:0.82rem; color:#7878a0;">En cours</p>
           </div>
           <div>
-            <p class="mb-0 fw-600" style="font-size:0.92rem;">Bac STI2D – SIN</p>
+            <p class="mb-0" style="font-size:0.92rem; font-weight:600; color:#4ade80;">Bac STI2D – SIN</p>
             <p class="mb-0" style="font-size:0.82rem; color:#7878a0;">Lycée Manouchian – 2023</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BTS SIO -->
+<section id="btssio" style="background-color:#0d0f15;">
+  <div class="container">
+    <h2 class="section-title">Le <span>BTS SIO</span></h2>
+    <div class="divider"></div>
+    <p class="mb-4" style="color:#8888a0; max-width:720px;">
+      Le BTS Services Informatiques aux Organisations (SIO) est un diplôme de niveau Bac+2 qui forme
+      des techniciens et futurs développeurs/administrateurs capables de répondre aux besoins
+      numériques des entreprises. Il se prépare en 2 ans et propose deux spécialités :
+    </p>
+
+    <div class="row g-4 mb-4">
+      <div class="col-md-6">
+        <div class="card sio-card p-4">
+          <i class="bi bi-code-slash"></i>
+          <h5 class="mb-2">Option SLAM <span style="color:#4ade80; font-size:0.75rem; font-weight:400;">— ma spécialité</span></h5>
+          <p>
+            Solutions Logicielles et Applications Métiers. Centrée sur le développement
+            d'applications (web, mobile, bases de données), la conception, les tests
+            et la maintenance de logiciels, ainsi que la sécurisation du code.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card sio-card p-4">
+          <i class="bi bi-hdd-network"></i>
+          <h5 class="mb-2">Option SISR</h5>
+          <p>
+            Solutions d'Infrastructure, Systèmes et Réseaux. Orientée vers l'administration
+            de serveurs, la gestion des réseaux, la virtualisation et la cybersécurité
+            des infrastructures.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card sio-card p-4 text-center">
+          <i class="bi bi-mortarboard"></i>
+          <h5 class="mb-1">2 ans</h5>
+          <p>Formation post-bac, niveau Bac+2 (120 ECTS)</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card sio-card p-4 text-center">
+          <i class="bi bi-laptop"></i>
+          <h5 class="mb-1">Projets concrets</h5>
+          <p>Développement d'applications, gestion de bases de données, réseaux</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card sio-card p-4 text-center">
+          <i class="bi bi-briefcase"></i>
+          <h5 class="mb-1">Stages en entreprise</h5>
+          <p>Immersion professionnelle pour appliquer les compétences acquises</p>
         </div>
       </div>
     </div>
@@ -419,17 +262,93 @@
         </div>
       </div>
 
-      <!-- Carte "en cours" -->
+      <!-- Gestion Ticket -->
       <div class="col-md-6 col-lg-5">
-        <div class="card project-card h-100" style="border-style: dashed;">
-          <div class="card-body d-flex flex-column justify-content-center align-items-center text-center" style="min-height:220px;">
-            <i class="bi bi-plus-circle" style="font-size:2rem; color:#2a2d3e; margin-bottom:12px;"></i>
-            <p style="color:#4a4a6a; font-size:0.88rem;">Nouveau projet en cours...</p>
+        <div class="card project-card h-100">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <h5 class="card-title">Gestion de Tickets</h5>
+              <i class="bi bi-ticket-perforated" style="font-size:1.4rem; color:#4ade80"></i>
+            </div>
+            <p class="card-text">
+              Application web de gestion de tickets (support / incidents) développée en PHP avec
+              base de données MySQL. Création, suivi et traitement des demandes par les utilisateurs.
+            </p>
+            <div class="mt-3">
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+            </div>
+            <div class="mt-3">
+              <span class="badge-custom">En cours de développement</span>
+            </div>
           </div>
         </div>
       </div>
 
     </div>
+  </div>
+</section>
+
+<!-- VEILLE TECHNOLOGIQUE -->
+<section id="veille">
+  <div class="container">
+    <h2 class="section-title">Veille <span>technologique</span></h2>
+    <div class="divider"></div>
+
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <div class="embed-frame-wrapper">
+          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ7gOK6lCpHYUbjVziOsx693lc17fXi2nZxkTsDYYnkWgq9umdHKi1LrulKlmlg8A/pubembed?start=false&loop=false&delayms=5000" allowfullscreen="true"></iframe>
+        </div>
+        <div class="mt-3">
+          <a href="https://docs.google.com/presentation/d/e/2PACX-1vQ7gOK6lCpHYUbjVziOsx693lc17fXi2nZxkTsDYYnkWgq9umdHKi1LrulKlmlg8A/pub?start=false&loop=false&delayms=5000" target="_blank" class="btn btn-green px-4 py-2 rounded">
+            <i class="bi bi-box-arrow-up-right me-1"></i> Ouvrir la présentation en plein écran
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <h5 class="mb-1" style="font-size:1.1rem; font-weight:600;">IA & Cybersécurité</h5>
+        <p class="mb-4" style="color:#7878a0; font-size:0.85rem;">
+          Veille technologique réalisée dans le cadre du BTS SIO – Option SLAM.
+        </p>
+
+        <div class="veille-meta-item">
+          <i class="bi bi-bullseye"></i>
+          <div>
+            <h6>Problématique</h6>
+            <p>Dans quelle mesure l'IA modifie-t-elle le rapport de force entre cyberattaquants et équipes de défense des SI ?</p>
+          </div>
+        </div>
+
+        <div class="veille-meta-item">
+          <i class="bi bi-bug"></i>
+          <div>
+            <h6>Axe 1 — IA offensive</h6>
+            <p>Phishing hybride, deepfakes, zero-day, malwares polymorphes</p>
+          </div>
+        </div>
+
+        <div class="veille-meta-item">
+          <i class="bi bi-shield-check"></i>
+          <div>
+            <h6>Axe 2 — IA défensive</h6>
+            <p>EDR/XDR, priorisation SOC, automatisation SOAR</p>
+          </div>
+        </div>
+
+        <div class="veille-meta-item">
+          <i class="bi bi-code-square"></i>
+          <div>
+            <h6>Axe 3 — Impacts métiers (SLAM)</h6>
+            <p>Secure by Design, DevSecOps, Prompt Injection (OWASP)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
